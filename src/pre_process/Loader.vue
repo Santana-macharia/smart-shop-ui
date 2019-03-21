@@ -58,22 +58,6 @@ export default {
         this.uploadError = err.response;
         this.currentStatus = STATUS_FAILED;
       });
-
-      this.$http({
-        method: 'get',
-        url : 'http://localhost:8000/loader/missing_observations/',
-        withCredentials: true,
-        headers: {
-          Authorization: `JWT ${this.$store.state.jwt}`,
-          'Content-Type': 'application/json'
-        }
-      })
-      .then (data =>{
-        console.log(data)
-      })
-      .catch(error => {
-        console.log(error)
-      })
     },
     filesChange(fieldName, fileList) {
       // handle file changes
