@@ -221,7 +221,8 @@ export default {
   created() {
     this.fetchRows(),
     this.fetchIds(),
-    this.fetchMissing()
+    this.fetchMissing(),
+    this.fetchClean()
   },
   methods: {
     fetchRows() {
@@ -292,7 +293,24 @@ export default {
       .catch(error => {
         console.log(error)
       })
-    }
+    },
+    fetchClean() {
+      this.$http({
+        method: 'get',
+        url : 'http://localhost:8000/loader/pre_process/',
+        withCredentials: true,
+        headers: {
+          Authorization: `JWT ${this.$store.state.jwt}`,
+          'Content-Type': 'application/json'
+        }
+      })
+      .then (data =>{
+        this.clean_data = data.body[0]
+
+        
+      })
+    
+    },
   }
 }
 </script>
