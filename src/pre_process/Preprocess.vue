@@ -11,18 +11,8 @@ export default {
       distinct_ids: {},
       distinct_ids_percentage: 0,
       columns: [],
-      clean_data:{
-        active: true,
-        age: -1,
-        created_at: "2019-06-04T20:13:58.706508Z",
-        created_by: "e1cc3704-99fa-48be-b93d-03741818acc7",
-        deleted: false,
-        email: "david23@gmail.com",
-        first_name: "david",
-        full_name: "david muiruri",
-        gender: "Male",
-        groups: [],
-      },
+      options: {},
+      clean_data: [],
       tableData: [],
       chart: {
                     labelOptions: {
@@ -297,7 +287,7 @@ export default {
         this.item = data.body[0]
         
         // this.columns = JSON.parse(this.item.missing_columns)
-        this.columns = this.item.missing_columns
+        // this.columns = this.item.missing_columns
         // this.tableData = JSON.parse(this.item.missing_data)
         console.log(this.tableData)
 
@@ -309,7 +299,7 @@ export default {
     fetchClean() {
       this.$http({
         method: 'get',
-        url : 'http://localhost:8000/loader/pre_process/',
+        url : 'http://localhost:8000/loader/clean_data/',
         withCredentials: true,
         headers: {
           Authorization: `JWT ${this.$store.state.jwt}`,
@@ -317,9 +307,8 @@ export default {
         }
       })
       .then (data =>{
-        this.clean_json_df = data.body[0]
-
-        
+        this.clean_data = data.body['data']
+        this.columns = data.body['columns']
       })
     
     },
