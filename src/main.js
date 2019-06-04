@@ -24,7 +24,7 @@ Vue.use(ClientTable);
 Vue.component('icon', Icon);
 Vue.component('echart', Echarts);
 Vue.component('app-login', Login);
-// Vue.component('app-main', Main);
+Vue.component('app-main', Main);
 
 Vue.config.productionTip = false;
 

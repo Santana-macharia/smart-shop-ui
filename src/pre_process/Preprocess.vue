@@ -283,12 +283,15 @@ export default {
         }
       })
       .then (data =>{
-        console.log(data)
         this.item = data.body[0]
-        
-        // this.columns = JSON.parse(this.item.missing_columns)
-        // this.columns = this.item.missing_columns
-        // this.tableData = JSON.parse(this.item.missing_data)
+ 
+        var res = JSON.parse(this.item.missing_columns);
+        var res_length = res.length;
+        for (var i = 0; i < res_length; i++) {
+            var array = res[i].split("=");
+            var value = array[1];
+            this.tableData.push(value);
+        }
         console.log(this.tableData)
 
       })
