@@ -41,6 +41,11 @@ export default main_routes = [
       component: Poll,
     },
     {
+      path: '/regressor',
+      name: 'regressor',
+      component: Regressor,
+    },
+    {
       path: '/projects',
       name: 'project',
       component: Project,

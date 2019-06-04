@@ -11,6 +11,18 @@ export default {
       distinct_ids: {},
       distinct_ids_percentage: 0,
       columns: [],
+      clean_data:{
+        active: true,
+        age: -1,
+        created_at: "2019-06-04T20:13:58.706508Z",
+        created_by: "e1cc3704-99fa-48be-b93d-03741818acc7",
+        deleted: false,
+        email: "david23@gmail.com",
+        first_name: "david",
+        full_name: "david muiruri",
+        gender: "Male",
+        groups: [],
+      },
       tableData: [],
       chart: {
                     labelOptions: {
@@ -88,7 +100,7 @@ export default {
                                                       position: 'inner',
                                                       distance: 0.25,
                                                       textStyle: {
-                                                          color: 'rgba(256, 256, 256, 0.87)',
+                                                          color: 'black',
                                                           fontFamily: 'Verdana',
                                                           fontSize: 12,
                                                           fontWeight: 300
@@ -116,15 +128,15 @@ export default {
                                               }
                                           },
                                 data: [{
-                                        value: 100,
+                                        value: 350,
                                         name: 'Rows'
                                     },
                                     {
-                                        value: 80,
+                                        value: 300,
                                         name: 'Ids'
                                     },
                                     {
-                                        value: 100,
+                                        value: 10,
                                         name: 'Missing'
                                     }
                                 ]
@@ -305,7 +317,7 @@ export default {
         }
       })
       .then (data =>{
-        this.clean_data = data.body[0]
+        this.clean_json_df = data.body[0]
 
         
       })
