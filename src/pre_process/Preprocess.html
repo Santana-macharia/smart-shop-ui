@@ -105,8 +105,8 @@
         </span>
         <div class="box-info">
             <span>Here will be all the Data</span>
-            <div class="col-md-4">
-              <p> {{ clean_data}} </p>
+            <div class="col-md-12">
+              <v-client-table :data="clean_data" :columns="columns" :options="options"></v-client-table>
             </div>
         </div>
       </div>

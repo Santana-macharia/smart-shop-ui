@@ -11,7 +11,12 @@ export default {
       distinct_ids: {},
       distinct_ids_percentage: 0,
       columns: [],
+<<<<<<< HEAD
       clean_data:{},
+=======
+      options: {},
+      clean_data: [],
+>>>>>>> 258b126441181ddf4468b3f612d4eb31c6a9961f
       tableData: [],
       chart: {
                     labelOptions: {
@@ -281,12 +286,15 @@ export default {
         }
       })
       .then (data =>{
-        console.log(data)
         this.item = data.body[0]
-        
-        // this.columns = JSON.parse(this.item.missing_columns)
-        this.columns = this.item.missing_columns
-        // this.tableData = JSON.parse(this.item.missing_data)
+ 
+        var res = JSON.parse(this.item.missing_columns);
+        var res_length = res.length;
+        for (var i = 0; i < res_length; i++) {
+            var array = res[i].split("=");
+            var value = array[1];
+            this.tableData.push(value);
+        }
         console.log(this.tableData)
 
       })
@@ -297,7 +305,7 @@ export default {
     fetchClean() {
       this.$http({
         method: 'get',
-        url : 'http://localhost:8000/loader/pre_process/',
+        url : 'http://localhost:8000/loader/clean_data/',
         withCredentials: true,
         headers: {
           Authorization: `JWT ${this.$store.state.jwt}`,
@@ -305,9 +313,8 @@ export default {
         }
       })
       .then (data =>{
-        this.clean_json_df = data.body[0]
-
-        
+        this.clean_data = data.body['data']
+        this.columns = data.body['columns']
       })
     
     },
