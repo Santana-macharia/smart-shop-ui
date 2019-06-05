@@ -1,4 +1,4 @@
-<template src="./Regressor.html">
+<template src="./cluster.html">
   
 </template>
 <script>

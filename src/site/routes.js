@@ -12,6 +12,8 @@ import Loader from '../pre_process/Loader';
 import Preprocess from '../pre_process/Preprocess';
 import Unique from '../pre_process/Unique';
 import Regressor from '../regressor/Regressor';
+import cluster from '../cluster/cluster';
+import maps from '../maps/maps';
 import audits_routes from '../audits/routes';
 
 
@@ -39,6 +41,16 @@ export default main_routes = [
       path: '/polls',
       name: 'polls',
       component: Poll,
+    },
+    {
+      path: '/cluster',
+      name: 'cluster',
+      component: cluster,
+    },
+    {
+      path: '/maps',
+      name: 'maps',
+      component: maps,
     },
     {
       path: '/regressor',
