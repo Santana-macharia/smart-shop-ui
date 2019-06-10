@@ -14,75 +14,9 @@ export default {
       options: {},
       clean_data: [],
       tableData: [],
-      chart: {
-                    config: {
-                        dataLoaded: true,
-                        font_color: "black"
-                    },
-                    option:{
-                      font_color:"black",
-                        calculable: false,
-                        series: [{
-                                name: 'Metric',
-                                type: 'pie',
-                                radius: [30, 100],
-                                roseType: 'area',
-                                selectedOffset: 1,
-                                selectedMode: 'single',
-                                x: '50%', // for funnel
-                                width: '100%', // for funnel
-                                max: 70, // for funnel
-                                
-                                
-                                data: [{
-                                        value: 100,
-                                        name: 'Distinct Rows',
-                                        
-                                    },
-                                    {
-                                        value: 90,
-                                        name: 'Distinct Ids'
-                                    }
-                                    
-                                ]
-                            },
-                            {
-                                name: 'Overall',
-                                type: 'pie',
-                                radius: [115, 125],
-                                startAngle: 180,
-                                selectedOffset: 1,
-
-                                // for funnel
-                                x: '60%',
-                                width: '50%',
-                                funnelAlign: 'left',
-                                max: 100,
-
-                                itemStyle: {
-                                    normal: {
-                                      color:"#659EC7",
-                                      
-                                        labelLine: {
-                                            show: false,
-                                            
-                                        }
-                                    }
-                                },
-
-                                data: [{
-                                        value: 100,
-                                        
-                                    },
-                                   
-                                ]
-                            },
-                           
-                        ]
-                    }
-                },
-    }
-  },
+      chart: {},
+    }},
+                                               
   created() {
     this.fetchRows(),
     this.fetchIds(),
