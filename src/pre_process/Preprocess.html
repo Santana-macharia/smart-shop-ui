@@ -1,7 +1,12 @@
 <div class="pre-process">
+    <div class="box-heading">
+        <span>Preprocessing Reports</span>
+      </div>
   <div class="row">
     <div class="col-md-6">
+        
       <div class=" box box-default">
+          
         <div class="box-heading">
           <span>Distinct Rows</span>
         </div>
@@ -88,24 +93,22 @@
     </div>
 
     <!-- Chart -->
-      <div class=" box box-default">
+      <div class=" box box-default" >
         <div class="box-heading">
-          <span>Data Reports</span>
+          <span>Chart</span>
         </div>
-        <div class="box-body">
-          <echart :config="chart.config" :options="chart.option" style="height:300;width:500"></echart>
+        <div class="box-body" height="50">
+          <echart :config="chart.config" :options="chart.option" style="height:50;width:200"></echart>
         </div>
       </div>
 
   <div class="row">
     <div class="col-md-12">
       <div class="card-box">
-        <span class="btn-icon btn-icon-round btn-icon-lg-alt color-warning">
-            <icon name="gears" aria-hidden="true"></icon>
-        </span>
-        <div class="box-info">
-            <span>Here will be all the Data</span>
-            <div class="col-md-12">
+        
+        <div class="box-heading">
+          <span>Clean Data</span>
+        </div>
               <v-client-table :data="clean_data" :columns="columns" :options="options"></v-client-table>
             </div>
         </div>

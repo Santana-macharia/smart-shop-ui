@@ -85,7 +85,7 @@
                                                         <span>Company</span>
                                                     </th>
                                                     <th class="">
-                                                        <span>Status</span>
+                                                        <span></span>
                                                     </th>
                                                     <th class="">
                                                         <span>Primary Email</span>
@@ -106,10 +106,10 @@
                                                         {{project.company}}
                                                     </td>
                                                     <td class="">
-                                                        <div v-show="true" class="ant-tag ant-tag-has-color" v-bind:class="{'ant-tag-type-info': project.active, 'ant-tag-type-completed':'!project.active'}">
-                                                            <span class="ant-tag-text" v-if="project.active">In Progress</span>
-                                                            <span class="ant-tag-text" v-else="!project.active" color="green">Completed</span>
-                                                        </div>
+                                                    <!--   <div v-show="true" class="ant-tag ant-tag-has-color" v-bind:class="{'ant-tag-type-info': project.active, 'ant-tag-type-completed':'!project.active'}">
+                                                           <span class="ant-tag-text" v-if="project.active"></span>
+                                                            <span class="ant-tag-text" v-else="!project.active" color="green"></span>
+                                                        </div> -->
                                                     </td>
                                                     <td class="">
                                                         {{project.email}}

@@ -11,213 +11,73 @@ export default {
       distinct_ids: {},
       distinct_ids_percentage: 0,
       columns: [],
-<<<<<<< HEAD
-      clean_data:{},
-=======
       options: {},
       clean_data: [],
->>>>>>> 258b126441181ddf4468b3f612d4eb31c6a9961f
       tableData: [],
       chart: {
-                    labelOptions: {
-                            show: true,
-                            position: 'inner',
-                            distance: 0.25,
-                            textStyle: {
-                                color: 'rgba(256, 256, 256, 0.87)',
-                                fontFamily: 'Verdana',
-                                fontSize: 12,
-                                fontWeight: 300
-                            }
-                        },
                     config: {
-                        theme: "default",
-                        dataLoaded: true
+                        dataLoaded: true,
+                        font_color: "black"
                     },
-                    option: {
-                        color: [
-                                '#01bcd4', '#b6a2de', '#5ab1ef', '#ffce3d', '#df474f',
-                                '#df4148', '#f3f39d', '#cb8e85', '#ed9678', '#e7dac9',
-                                '#1e90ff', '#ff6347', '#7b68ee', '#00fa9a', '#ffd700'
-                            ],
-                        tooltip: {
-                            trigger: 'item',
-                            formatter: "{b} <br/> {c} ({d}%)"
-                        },
-                        legend: {
-                            orient: 'vertical',
-                            x: 'left',
-                            data: ['Understand', 'Own', 'Deliver']
-                        },
-                        toolbox: {
-                            show: true,
-                            feature: {
-                                mark: {
-                                    show: true,
-                                    title: 'Mark'
-                                },
-                                dataView: {
-                                    show: true,
-                                    title: 'Data View',
-                                    readOnly: false
-                                },
-                                magicType: {
-                                    show: true,
-                                    title: 'Transform to Funnel',
-                                    type: ['pie', 'funnel']
-                                },
-                                restore: {
-                                    show: true,
-                                    title: 'Restore'
-                                },
-                                saveAsImage: {
-                                    show: true,
-                                    title: 'Save as Image'
-                                }
-                            }
-                        },
+                    option:{
+                      font_color:"black",
                         calculable: false,
                         series: [{
                                 name: 'Metric',
                                 type: 'pie',
-                                radius: [0, 80],
+                                radius: [30, 100],
                                 roseType: 'area',
                                 selectedOffset: 1,
                                 selectedMode: 'single',
-                                x: '20%', // for funnel
-                                width: '40%', // for funnel
-                                max: 40, // for funnel
-                                itemStyle: {
-                                              normal: {
-                                                  label: {
-                                                      show: true,
-                                                      position: 'inner',
-                                                      distance: 0.25,
-                                                      textStyle: {
-                                                          color: 'black',
-                                                          fontFamily: 'Verdana',
-                                                          fontSize: 12,
-                                                          fontWeight: 300
-                                                      }
-                                                  },
-                                                  labelLine: {
-                                                      show: false
-                                                  }
-                                              },
-                                              emphasis: {
-                                                  label: {
-                                                      show: true,
-                                                      position: 'inner',
-                                                      distance: 0.25,
-                                                      textStyle: {
-                                                          color: 'rgba(256, 256, 256, 0.87)',
-                                                          fontFamily: 'Verdana',
-                                                          fontSize: 12,
-                                                          fontWeight: 300
-                                                      }
-                                                  },
-                                                  labelLine: {
-                                                      show: false
-                                                  }
-                                              }
-                                          },
+                                x: '50%', // for funnel
+                                width: '100%', // for funnel
+                                max: 70, // for funnel
+                                
+                                
                                 data: [{
-                                        value: 350,
-                                        name: 'Rows'
+                                        value: 100,
+                                        name: 'Distinct Rows',
+                                        
                                     },
                                     {
-                                        value: 300,
-                                        name: 'Ids'
-                                    },
-                                    {
-                                        value: 10,
-                                        name: 'Missing'
+                                        value: 70,
+                                        name: 'Distinct Ids'
                                     }
+                                    
                                 ]
                             },
                             {
                                 name: 'Overall',
                                 type: 'pie',
-                                radius: [85, 105],
+                                radius: [115, 125],
                                 startAngle: 180,
                                 selectedOffset: 1,
 
                                 // for funnel
                                 x: '60%',
-                                width: '35%',
+                                width: '50%',
                                 funnelAlign: 'left',
                                 max: 100,
 
                                 itemStyle: {
                                     normal: {
+                                      color:"#659EC7",
+                                      
                                         labelLine: {
-                                            show: true,
-                                            length: 30
+                                            show: false,
+                                            
                                         }
                                     }
                                 },
 
                                 data: [{
-                                        value: 80,
-                                        name: 'Overall'
+                                        value: 100,
+                                        
                                     },
-                                    {
-                                        value: 44,
-                                        name: 'invisible',
-                                        itemStyle: {
-                                              normal: {
-                                                  color: 'rgba(0,0,0,0)',
-                                                  label: {
-                                                      show: false
-                                                  },
-                                                  labelLine: {
-                                                      show: false
-                                                  }
-                                              },
-                                              emphasis: {
-                                                  color: 'rgba(0,0,0,0)'
-                                              }
-                                          }
-                                    }
+                                   
                                 ]
                             },
-                            {
-                                name: 'Benchmark',
-                                type: 'pie',
-                                radius: [110, 130],
-                                startAngle: 180,
-                                selectedOffset: 1,
-
-                                // for funnel
-                                x: '60%',
-                                width: '35%',
-                                funnelAlign: 'left',
-                                max: 100,
-
-                                data: [{
-                                        value: 80,
-                                        name: 'Benchmark'
-                                    },
-                                    {
-                                        value: 10,
-                                        name: 'invisible',
-                                        itemStyle: {
-                                                normal: {
-                                                    color: 'rgba(0,0,0,0)',
-                                                    label: {
-                                                        show: false
-                                                    },
-                                                    labelLine: {
-                                                        show: false
-                                                    }
-                                                },
-                                                emphasis: {
-                                                    color: 'rgba(0,0,0,0)'
-                                                }
-                                            }
-                                    }
-                                ]
-                            }
+                           
                         ]
                     }
                 },
