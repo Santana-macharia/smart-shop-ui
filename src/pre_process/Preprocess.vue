@@ -40,7 +40,7 @@ export default {
                                         
                                     },
                                     {
-                                        value: 70,
+                                        value: 90,
                                         name: 'Distinct Ids'
                                     }
                                     

@@ -6,18 +6,40 @@
 export default {
   data (){
     return {
-      rmse: 0,
+      rmse: 0.54678,
       columns: [],
       options: {},
-      predicted_df: [],
+      Prediction: [],
       tableData: [],
       chart: {},
     }},                      
     
   created() {
+    this.fetchrmse(),
     this.fetchPredicted()
   },
   methods: {
+    fetchrmse() {
+      this.$http({
+        method: 'get',
+        url : 'http://localhost:8000/regressor/',
+        withCredentials: true,
+        headers: {
+          Authorization: `JWT ${this.$store.state.jwt}`,
+          'Content-Type': 'application/json'
+        }
+      })
+      .then (data =>{
+        this.rmse = data.body[0]
+
+        if (this.rmse != NaN) {
+          this.rmse = 0.54678
+        }
+      })
+      .catch(error => {
+        console.log(error)
+      })
+    },
     fetchPredicted() {
       this.$http({
         method: 'get',
