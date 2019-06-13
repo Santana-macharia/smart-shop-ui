@@ -40,6 +40,29 @@ export default {
         console.log(error)
       })
     },
+    //push
+        function (response) {
+        this.$router.push('/');
+        this.$http({
+          method: 'get',
+          url : 'http://localhost:8000/regressor/',
+          withCredentials: true,
+          headers: {
+            Authorization: `JWT ${this.$store.state.jwt}`,
+            'Content-Type': 'application/json'
+          }
+        })
+        .then (data =>{
+          console.log(data)
+        })
+        .catch(error => {
+          console.log(error)
+        })
+      },
+      function (error) {
+        console.log(error)
+      },
+      //push
     fetchPredicted() {
       this.$http({
         method: 'get',
