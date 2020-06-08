@@ -1,8 +1,8 @@
 {
-  "name": "bisda_portal",
+  "name": "rentals",
   "version": "1.0.0",
-  "description": "Front End App for the Bisda 4th Year Project",
-  "author": "Collins Githiari",
+  "description": "Front End App",
+  "author": "Santana Macharia",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
