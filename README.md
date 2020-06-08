@@ -1,6 +1,3 @@
-# Bisda_Portal
-
-> Front End App for the 4th Year Project
 
 ## Build Setup
 
