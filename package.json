@@ -15,7 +15,7 @@
     "ajv": "^6.4.0",
     "axios": "^0.19.0",
     "bootstrap-less": "^3.3.8",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "js-cookie": "^2.2.0",
     "popper.js": "^1.14.1",
     "vue": "^2.5.2",
